@@ -1,0 +1,13 @@
+<h2>{{post.title}}</h2>
+<p>{{post.body}}</p>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <p><a (click)="getCommentsById(post.id)" class="btn btn-secondary" role="button">Comments</a></p>
+  <p><a (click)="clearComments()" class="btn btn-secondary" role="button">Clear</a></p>
+</div>
+<div *ngIf="comments && post.id === postId">
+  <ul>
+    <li *ngFor="let comment of comments">
+      <app-comment [comment]="comment"></app-comment>
+    </li>
+  </ul>
+</div>

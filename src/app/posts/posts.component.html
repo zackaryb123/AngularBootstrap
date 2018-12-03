@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Posts</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <form class="form-inline mt-2 mt-md-0">
+        <input (change)="setUserId($event)" class="form-control mr-sm-2" type="text" placeholder="User Id" aria-label="Search">
+        <button (click)="(getPostById($event))" class="btn btn-outline-success my-2 my-sm-0" type="button">Filter</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container marketing">
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div *ngFor="let post of posts" class="col-lg-4">
+        <app-post [post]="post"></app-post>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+  </div>
+</div>
