@@ -1,0 +1,20 @@
+<img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+<h2>{{user.name}}</h2>
+<p>{{user.username}}</p>
+<p>{{user.email}}</p>
+<p>{{user.address.street}} {{user.address.suite}} {{user.address.city}} {{user.address.zipcode}}</p>
+<p>{{user.phone}}</p>
+<p>{{user.website}}</p>
+<p>{{user.company.name}}</p>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <p><a (click)="getPostById(user.id)" class="btn btn-secondary" role="button">Posts</a></p>
+  <p><a (click)="clearPostById(user.id)" class="btn btn-secondary" role="button">Clear</a></p>
+</div>
+<div *ngIf="userPosts && user.id === userId">
+  <ul>
+    <li *ngFor="let post of userPosts">
+      <p class="small">{{post.title}}</p>
+      <p class="small">{{post.body}}</p>
+    </li>
+  </ul>
+</div>
